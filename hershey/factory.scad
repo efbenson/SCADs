@@ -29,11 +29,11 @@ difference(){
 module coreStructure(){
 	union(){
 		faceBuilding();
-		translate([faceWidth*.4, faceDepth, 0]) 
+		translate([spineOffset, faceDepth, 0]) 
 			spine();
-		translate([faceWidth*.4 - stackRadius, faceDepth + spineDepth-stackRadius, 0]) 
+		translate([spineOffset - stackRadius, faceDepth + spineDepth-stackRadius, 0]) 
 			stack();
-		translate([faceWidth *.8 + stackRadius , faceDepth + spineDepth-stackRadius, 0]) 
+		translate([spineOffset + spineWidth+ stackRadius , faceDepth + spineDepth-stackRadius, 0]) 
 			stack();
 		translate([-spineOffset - spineWidth, stackRadius, 0]) 
 			#leftBuilding();
