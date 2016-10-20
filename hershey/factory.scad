@@ -1,7 +1,7 @@
 
-height = 151;
-faceWidth = 128 ;
-faceDepth = 165;
+height = 119;
+faceWidth = 104.125;
+faceDepth = 133.31;
 spineDepth = faceDepth * 1.90;
 spineWidth = faceWidth * 0.38;
 spineOffset = faceWidth * 0.41;
@@ -36,9 +36,9 @@ module coreStructure(){
 		translate([spineOffset + spineWidth+ stackRadius , faceDepth + spineDepth-stackRadius, 0]) 
 			stack();
 		translate([-spineOffset - spineWidth, stackRadius, 0]) 
-			#leftBuilding();
+			leftBuilding();
 		translate([+spineOffset + spineWidth, faceDepth, 0]) 
-			#rightBuilding();
+			rightBuilding();
 	}
 }
 
@@ -50,7 +50,7 @@ module faceBuilding(){
 				cube(size=[faceWidth-crownWidth*2, faceDepth-crownWidth*2, crownHeight*2], center=false);		
 		}
 		translate([crownWidth, crownWidth, 0]) 
-				#cube(size=[10, stackRadius, height], center=false);
+				cube(size=[10, stackRadius, height], center=false);
 	}
 }
 
@@ -85,7 +85,7 @@ module rightBuilding(){
 	difference(){
 		cube(size=[rightWidth, spineDepth - stackRadius * 2, sideHeight], center = false);
 		translate([0, crownWidth, sideHeight-crownHeight]) 
-			#cube(size=[rightWidth-crownWidth, (spineDepth - stackRadius * 2) - crownWidth * 2, crownHeight*2], center = false);
+			cube(size=[rightWidth-crownWidth, (spineDepth - stackRadius * 2) - crownWidth * 2, crownHeight*2], center = false);
 	}
 }
 
