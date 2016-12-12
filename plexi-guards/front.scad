@@ -1,4 +1,4 @@
-thickness = 2.25;
+thickness = 2.70;
 lip = 4.75;
 coupler = 4.75;
 coupleThickness = 2.25;
@@ -6,15 +6,25 @@ totThick = (coupleThickness * 2) + thickness;
 
 
 rotate([180, 0, 0])   
-    union (){
-        length = 100; 
-        coupler(100);
-        translate([0, thickness * 2, coupler]) {
-            cube(size=[length, lip, thickness]);
+    coupled(200);
+
+module coupled(length) {
+    difference(){ 
+        union (){
+            coupler(length);
+            translate([0, thickness * 2, coupler]) {
+                cube(size=[length, lip, thickness]);
+            }
         }
+        translate([-35,-5,0])
+            rotate([0, 45, 0]) 
+                #cube(size=[30, 30, 30]);
+        
+        translate([length - 7.46,-5,coupler + thickness])
+            rotate([0, 45, 0]) 
+                #cube(size=[30, 30, 30]);
     }
-
-
+}
 
 
 module coupler(length=10) {

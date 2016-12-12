@@ -28,17 +28,17 @@ difference(){
 
 module coreStructure(){
 	union(){
-		// faceBuilding();
-		// translate([spineOffset, faceDepth, 0]) 
-		// 	spine();
-		translate([spineOffset - stackRadius, faceDepth + spineDepth-stackRadius, 0]) 
-			stack();
+		faceBuilding();
+		translate([spineOffset, faceDepth, 0]) 
+			spine();
+		// translate([spineOffset - stackRadius, faceDepth + spineDepth-stackRadius, 0]) 
+		// 	stack();
 		// translate([spineOffset + spineWidth+ stackRadius , faceDepth + spineDepth-stackRadius, 0]) 
 		// 	stack();
-		// translate([-spineOffset - spineWidth, stackRadius, 0]) 
-		// 	leftBuilding();
-		// translate([+spineOffset + spineWidth, faceDepth, 0]) 
-		// 	rightBuilding();
+		translate([-spineOffset - spineWidth, stackRadius, 0]) 
+			leftBuilding();
+		translate([+spineOffset + spineWidth, faceDepth, 0]) 
+			rightBuilding();
 	}
 }
 

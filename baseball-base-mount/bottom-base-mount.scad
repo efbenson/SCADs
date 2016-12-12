@@ -13,7 +13,7 @@ module mount() {
             cube(size=[31, 10, 70]);
     translate([0, 62.75, 0]) 
         rotate([-45, 0, 0])
-            #cube(size=[31, 10, 25]);                
+            cube(size=[31, 10, 25]);                
 }
 
 
